@@ -1,0 +1,387 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.body{
+    background-color: #212331;
+    display: flex;
+    overflow: hidden;
+}
+.loader{
+    background-color: #212331;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    overflow: hidden;
+    color: white;
+}
+.loader h1::after{
+    content: '\2026';
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dots steps(4, end) 2s infinite;
+    width: 0px;
+}
+@keyframes dots {
+    to{
+        width: 35px;
+    }
+}
+.home,.projects,.contacts{
+    display: none;
+    align-items: center;
+    font-size: 128pt;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    transition: 0.8s;
+    color: transparent;
+    animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+} 
+.home .home1, .projects .projects1, .contacts .contacts1{
+    font-family: 'ABeeZee';
+    font-weight: bold;
+    color: white;
+}
+@keyframes reveal {
+    80%{
+        letter-spacing: 8px;
+    }
+    100%{
+        background-size: 300% 300%;
+    }
+}
+@keyframes glow {
+    40%{
+        text-shadow: 0 0 8px #fff;
+    }
+} 
+.header{
+    display: none;
+    background-color: white;
+    height: 100vh;
+    opacity: 0;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #212331;
+    margin: 2vh 2vw 2vh 2vw;
+}
+.left .tit{
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 32px;
+}
+.nav ul{
+    list-style: none;
+}
+.nav ul li{
+    margin: 10vh 0vw 10vh 0vw;
+}
+.nav ul li a{
+    font-family: 'ABeeZee';
+    text-decoration: none;
+    color: #212331;
+}
+.privacy{
+    font-family: 'ABeeZee';
+}
+.privacy a{
+    color: #212331;
+}
+.main{
+    display: none;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+}
+.box{
+    margin: 2vh 2vw 2vh 2vw;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.box .boxtxt{
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 32px;
+}
+.box .boxtxt h1 a{
+    color: white;
+    text-decoration: none;
+}
+.pbox{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.pbox .pbox1 img{
+    width: 15vw;
+    margin: 2vh 2vw 2vh 2vw;
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.50);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.form .name{
+    display: flex;
+    margin: 1vh 0vw 1vh 0vw;
+}
+.form .name .nome{
+    margin: 0vh 1vw 0vh 1vw;
+    width: 15vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    border-bottom: white 2px solid;
+    padding-left: 25px;
+    background-image: url(/Img/user.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    font-family: 'Montserrat';
+    color: white;
+    outline: none;
+    text-transform: capitalize;
+}
+.form .name .nome::placeholder{
+    font-family: 'Montserrat';
+    color: white;
+}
+.form .email{
+    margin: 1vh 1vw 1vh 1vw;
+    width: 25vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    border-bottom: white 2px solid;
+    padding-left: 20px;
+    background-image: url(/Img/email.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    font-family: 'Montserrat';
+    color: white;
+    outline: none;
+    text-transform: capitalize;
+}
+.form .email::placeholder{
+    font-family: 'Montserrat';
+    color: white;
+}
+.form .approved{
+    font-family: 'Montserrat';
+    color: white;
+    margin: 5px 0px 0px 0px;
+}
+.form .approved a{
+    font-family: 'Montserrat';
+    color: white;
+}
+.form .message{
+    margin: 1vh 1vw 1vh 1vw;
+    width: 20vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    border-bottom: white 2px solid;
+    padding-left: 25px;
+    background-image: url(/Img/message.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    font-family: 'Montserrat';
+    color: white;
+    outline: none;
+    max-height: 75vh;
+    resize: vertical;
+    text-transform: capitalize;
+}
+.form .message::placeholder{
+    font-family: 'Montserrat';
+    color: white;
+}
+.form .submit{
+    margin: 1vh 1vw 1vh 1vw;
+    width: 5vw;
+    font-family: 'ABeeZee';
+    outline: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 2px 10px 2px;
+    border: none;
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.50);
+}
+@media screen and (max-width:630px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+    .home,.contacts,.projects{
+        font-size: 64pt;
+        margin: 28vh 0vw 0vh 0vw;
+    } 
+    .header{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        height: 47vw;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        color: #212331;
+        margin: 2vh 2vw 2vh 2vw;
+    }
+    .left .tit{
+        font-family: 'Montserrat';
+        font-weight: 800;
+        font-size: 32px;
+        margin: 0vh 0vw 0vh 5vw;
+    }
+    .nav{
+        margin: 0vh 0vw 0vh 0vw;
+    }
+    .nav ul{
+        display: inline-flex;
+        list-style: none;
+    }
+    .nav ul li{
+        margin: 0vh 5vw 1vh 5vw;
+    }
+    .nav ul li a{
+        font-family: 'ABeeZee';
+        text-decoration: none;
+        color: #212331;
+    }
+    .privacy{
+        font-family: 'ABeeZee';
+        margin: 1vh 0vw 0vh 5vw;
+    }
+    .privacy a{
+        color: #212331;
+        font-size: 16px;
+    }
+    .home{
+        display: none;
+    }
+    .projects{
+        display: none;
+    }
+    .contacts{
+        display: none;
+    }
+    .main{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height: 74vh;
+    }
+    .box{
+        text-align: center;
+    }
+    .box .boxtxt{
+        font-size: 10px;
+    }
+    .pbox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20vh 0vw 0vh 0vw;
+    }
+    .pbox .pbox1 img{
+        width: 50vw;
+    }
+    .form .name .nome{
+        width: 40vw;
+    }
+    .form .email{
+        width: 50vw;
+    }
+    .form .approved{
+        font-family: 'Montserrat';
+        text-align: center;
+    }
+    .form .message{
+        width: 60vw;
+    }
+    .form .submit{
+        width: 20vw;
+        font-weight: bold;
+    }
+}
+@media screen and (min-width:768px){
+    body{
+        overflow: hidden;
+    }
+    .header{
+        height: 100vh;
+    }
+    .nav ul li a{
+        font-size: 18pt;
+        display: block;
+    }
+    .privacy a{
+        font-size: 18pt;
+    }
+    .pbox .pbox1 img{
+        width: 25vw;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form .name{
+        display: flex;
+        flex-direction: column;
+        margin: 1vh 0vw 1vh 0vw;
+    }
+    .form .name .nome{
+        width: 50vw;
+        margin: 1vh 0vw 1vh 0vw;
+        font-size: 16pt;
+    }
+    .form .email{
+        width: 50vw;
+        font-size: 16pt;
+    }
+    .form .approved{
+        font-family: 'Montserrat';
+        text-align: center;
+        font-size: 16pt;
+    }
+    .form .message{
+        width: 60vw;
+        font-size: 16pt;
+    }
+    .form .submit{
+        width: 20vw;
+        font-size: 16pt;
+        font-weight: bold;
+    }
+}
